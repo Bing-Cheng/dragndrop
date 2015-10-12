@@ -73,21 +73,25 @@ var ActionPlans = angular.module('ActionPlans', ["kendo.directives"])
         $scope.treeData.dataSource = dataSourcet;
 
         $scope.treeData.treeOptions = {
-           dragAndDrop: true,
-          drag: function(e) {
-            if (e.dropTarget.id === 'dropArea') {
-              e.setStatusClass('k-add');
-            } else {
-              e.setStatusClass('k-denied');
-            }
-          },
-          drop: function(e) {
-            console.log(e);
-            $scope.treeData.dropped = e.sourceNode.textContent;
-            $scope.$apply();
-            e.preventDefault();
-          }
+          //  dragAndDrop: true,
+          // drag: function(e) {
+          //   if (e.dropTarget.id === 'dropArea') {
+          //     e.setStatusClass('k-add');
+          //   } else {
+          //     e.setStatusClass('k-denied');
+          //   }
+          // },
+          // drop: function(e) {
+          //   console.log(e);
+          //   $scope.treeData.dropped = e.sourceNode.textContent;
+          //   $scope.$apply();
+          //   e.preventDefault();
+          // }
         };
+
+      $scope.allowDrop =  function(ev) {
+    ev.preventDefault();
+}
         
         $scope.treeData.dataSource.read();
 

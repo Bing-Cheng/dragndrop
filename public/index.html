@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Kendo UI Snippet</title>
+
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2015.3.930/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2015.3.930/styles/kendo.rtl.min.css">
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2015.3.930/styles/kendo.default.min.css">
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2015.3.930/styles/kendo.dataviz.min.css">
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2015.3.930/styles/kendo.dataviz.default.min.css">
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2015.3.930/styles/kendo.mobile.all.min.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    
+    <script src="http://kendo.cdn.telerik.com/2015.3.930/js/kendo.all.min.js"></script>
+     
+
+    <script src="example.js"></script>
+
+</head>
+<body ng-app='ActionPlans' ng-controller='ActionPlansController'>
+
+        <div kendo-grid='testgrid' id='testgrid' kendo-sortable k-hint='fHint' k-placeholder='fPlaceholder'  options='gridOptions'></div>
+
+ <div kendo-grid='t1' kendo-draggable k-hint="draggableHint" k-filter="'tr'" options="mainGridOptions">
+ </div> 
+
+ <kendo-grid kendo-droptarget k-drop="onDrop" options="mainGridOptions2">
+ </kendo-grid> 
+
+     <h1>Kendo TreeView Drag & Drop</h1>
+    <div>
+      <div data-kendo-tree-view="" data-k-data-source="treeData.dataSource" data-k-options="treeData.treeOptions" id="treeDataTree">
+            <span k-template class="draga">
+                 {{dataItem.text}}aa<button type="button" ng-click="removeWorkbook(dataItem)" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-trash">re</span></button>
+             </span>
+      </div>
+      <div style="margin-top: 30px;width:100px;height:100px;border:1px solid;background:green" id="dropArea">Drop here</div>
+      <p>{{ treeData.dropped }}</p>
+    </div>
+
+    <div data-kendo-tree-view="t2" data-k-data-source="treeData.dataSource" data-k-options="treeData.treeOptions" id="treeDataTree2">
+            <span k-template class="draga">
+                 {{dataItem.text}}aa<button type="button" ng-click="removeWorkbook(dataItem)" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-trash">re</span></button>
+             </span>
+      </div>
+
+</body>
+</html>
